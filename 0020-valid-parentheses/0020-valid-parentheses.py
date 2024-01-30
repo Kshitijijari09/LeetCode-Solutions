@@ -1,5 +1,6 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        #to remember check for the ending parenthesis and add to stack once you find it start poping the stack and in the end if the stack is empty  return true else false.
         dic = {
             ')' : '(',
             '}' : '{',
