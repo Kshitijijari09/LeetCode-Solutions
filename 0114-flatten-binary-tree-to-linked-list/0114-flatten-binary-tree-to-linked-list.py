@@ -9,20 +9,37 @@ class Solution:
         """
         Do not return anything, modify root in-place instead.
         """
-        def dfs(root):
-            if not root:
-                return None
+        current = root
+        while current:
+            if current.left:
+                # Find the rightmost node of the left subtree
+                rightmost = current.left
+                while rightmost.right:
+                    rightmost = rightmost.right
+
+                # Move the right subtree to the rightmost node of the left subtree
+                rightmost.right = current.right
+                current.right = current.left
+                current.left = None
+
+            # Move to the next node
+            current = current.right
+#         def dfs(root):
+#             if not root:
+#                 return None
             
-            leftTail = dfs(root.left)
-            rightTail = dfs(root.right)
+#             leftTail = dfs(root.left)
+#             rightTail = dfs(root.right)
             
-            if root.left:
-                leftTail.right = root.right
-                root.right = root.left
-                root.left = None
+#             if root.left:
+#                 leftTail.right = root.right
+#                 root.right = root.left
+#                 root.left = None
                 
-            last =  rightTail or leftTail or root 
+#             last =  rightTail or leftTail or root 
             
-            return last
+#             return last
         
-        dfs(root)
+#         dfs(root)
+
+        
