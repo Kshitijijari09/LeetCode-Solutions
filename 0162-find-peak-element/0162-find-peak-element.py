@@ -4,7 +4,6 @@ class Solution:
         
         while l< r:
             midpoint = (l+r) // 2
-            print(midpoint)
             if nums[midpoint] < nums[midpoint+1]:
                 l = midpoint + 1
             else:
