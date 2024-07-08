@@ -28,7 +28,6 @@ class Solution:
         # Edit the remaining values in the grid accordingly!
         for i in range(1, n):
             for j in range(1, m):
-                print(grid[i-1][j],grid[i][j-1]+grid[i][j])
                 grid[i][j] = min(grid[i-1][j], grid[i][j-1]) + grid[i][j]
 
         return grid[-1][-1]
