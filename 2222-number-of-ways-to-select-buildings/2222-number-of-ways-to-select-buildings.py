@@ -1,6 +1,6 @@
 class Solution:
     def numberOfWays(self, s: str) -> int:
-        N = len(s)
+        
         ans = 0
         
         ones = 0
@@ -21,5 +21,6 @@ class Solution:
                 ans += zero_one
                 one_zero += ones
                 zeroes += 1
-        
+           
+            
         return ans
