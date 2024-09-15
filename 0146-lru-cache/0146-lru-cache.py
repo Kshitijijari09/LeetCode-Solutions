@@ -10,7 +10,7 @@ class LRUCache:
         
         self.left, self.right = Node(0,0), Node(0,0)
         #LRU            #MRU
-        self.left.nxt,self.right.prev = self.right,self.left
+        self.left.next,self.right.prev = self.right,self.left
     
     def remove(self, node):
         prev,nxt = node.prev, node.next
