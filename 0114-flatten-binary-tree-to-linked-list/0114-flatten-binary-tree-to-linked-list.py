@@ -26,3 +26,18 @@ class Solution:
             return flatten
         
         dfs(root)
+        current = root
+#         while current:
+#             if current.left:
+#                 # Find the rightmost node of the left subtree
+#                 rightmost = current.left
+#                 while rightmost.right:
+#                     rightmost = rightmost.right
+
+#                 # Move the right subtree to the rightmost node of the left subtree
+#                 rightmost.right = current.right
+#                 current.right = current.left
+#                 current.left = None
+
+#             # Move to the next node
+#             current = current.right
