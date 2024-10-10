@@ -9,5 +9,5 @@ class Solution:
                 if grid[r][c]:
                     dp[c] = 0
                 elif c+1 < n:
-                    dp[c] += dp[c+1]
+                    dp[c] = dp[c] + dp[c+1]
         return dp[0]
