@@ -8,6 +8,7 @@ class Solution:
             CurSum += n
             while CurSum >= target:
                 res = min(res,r-l+1)
+                print(res)
                 CurSum -= nums[l]
                 l+=1
         return res if res <= len(nums) else 0
