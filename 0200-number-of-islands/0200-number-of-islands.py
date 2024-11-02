@@ -34,28 +34,30 @@ class Solution:
         if not grid:
             return 0
         
-        rows, cols = len(grid),len(grid[0])
-        island = 0
+        Rows, Cols = len(grid),len(grid[0])
+        island = 0 
         visit = set()
         
         def bfs(r,c):
             q = collections.deque()
-            q.append((r,c))
             visit.add((r,c))
-            
+            q.append((r,c))
             while q:
                 row,col = q.popleft()
                 directions = [[1,0],[-1,0],[0,1],[0,-1]]
                 for dr,dc in directions:
-                    ROWS,COLS = dr+row, dc+col
-                    if (ROWS in range(rows) and COLS in range(cols) and (ROWS,COLS) not in visit and grid[ROWS][COLS] == '1'):
-                        q.append((ROWS, COLS))
-                        visit.add((ROWS, COLS))
-                        
+                    ROWS, COLS = dr+row,dc+col
+                    if (ROWS in range(Rows) and 
+                        COLS in range(Cols) and 
+                        (ROWS,COLS) not in visit and 
+                        grid[ROWS][COLS] == "1"):
+                        q.append((ROWS,COLS))
+                        visit.add((ROWS,COLS))
+      
         
-        for r in range(rows):
-            for c in range(cols):
+        for r in range(Rows):
+            for c in range(Cols):
                 if grid[r][c] == "1" and (r,c) not in visit:
                     bfs(r,c)
-                    island +=1
-        return island
+                    island += 1
+        return island 
